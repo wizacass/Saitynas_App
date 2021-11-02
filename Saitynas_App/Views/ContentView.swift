@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Saitynas_App
-//
-//  Created by Vytenis Petrauskas on 2021-09-06.
-//
-
 import SwiftUI
 
 struct ContentView: View {
