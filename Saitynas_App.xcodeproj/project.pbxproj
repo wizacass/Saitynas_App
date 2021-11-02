@@ -112,8 +112,10 @@
 		86328E1926E68B5F00A904DD /* Saitynas_App */ = {
 			isa = PBXGroup;
 			children = (
-				86328E1A26E68B5F00A904DD /* Saitynas_AppApp.swift */,
-				86328E1C26E68B5F00A904DD /* ContentView.swift */,
+				86B06E062731B5DF0016FFF0 /* Services */,
+				86B06E072731B5EF0016FFF0 /* Models */,
+				86B06E052731B5D50016FFF0 /* View Models */,
+				86B06E042731B5C00016FFF0 /* Views */,
 				86328E1E26E68B6000A904DD /* Assets.xcassets */,
 				86328E2326E68B6000A904DD /* Info.plist */,
 				86328E2026E68B6000A904DD /* Preview Content */,
@@ -147,6 +149,36 @@
 			path = Saitynas_AppUITests;
 			sourceTree = "<group>";
 		};
+		86B06E042731B5C00016FFF0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				86328E1A26E68B5F00A904DD /* Saitynas_AppApp.swift */,
+				86328E1C26E68B5F00A904DD /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		86B06E052731B5D50016FFF0 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		86B06E062731B5DF0016FFF0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		86B06E072731B5EF0016FFF0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		AA2541D28790C86CD09E4C47 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,7 +199,6 @@
 				2EEB1AF240ED47B545664E53 /* Pods-Saitynas_AppTests.debug.xcconfig */,
 				E8C80ED2C884833EFEB8257F /* Pods-Saitynas_AppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
