@@ -3,17 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1CA268ED8CAB701AE3ED67DF /* Pods_Saitynas_App_Saitynas_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C54F8997991B2E65F55F3B7 /* Pods_Saitynas_App_Saitynas_AppUITests.framework */; };
-		86328E1B26E68B5F00A904DD /* Saitynas_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86328E1A26E68B5F00A904DD /* Saitynas_AppApp.swift */; };
-		86328E1D26E68B5F00A904DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86328E1C26E68B5F00A904DD /* ContentView.swift */; };
+		86328E1B26E68B5F00A904DD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86328E1A26E68B5F00A904DD /* MainView.swift */; };
+		86328E1D26E68B5F00A904DD /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86328E1C26E68B5F00A904DD /* WelcomeView.swift */; };
 		86328E1F26E68B6000A904DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86328E1E26E68B6000A904DD /* Assets.xcassets */; };
 		86328E2226E68B6000A904DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86328E2126E68B6000A904DD /* Preview Assets.xcassets */; };
 		86328E2D26E68B6000A904DD /* Saitynas_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86328E2C26E68B6000A904DD /* Saitynas_AppTests.swift */; };
 		86328E3826E68B6000A904DD /* Saitynas_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86328E3726E68B6000A904DD /* Saitynas_AppUITests.swift */; };
+		86C3F10A2731DC060010802B /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F1092731DC060010802B /* ApiClient.swift */; };
+		86C3F10D2731DD730010802B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F10C2731DD730010802B /* Message.swift */; };
+		86C3F10F2731DDD30010802B /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F10E2731DDD30010802B /* Meta.swift */; };
+		86C3F1112731DE0C0010802B /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F1102731DE0C0010802B /* MessageViewModel.swift */; };
+		86C3F1132731E1D30010802B /* Communicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F1122731E1D30010802B /* Communicator.swift */; };
+		86C3F1152731F29B0010802B /* Bootstrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F1142731F29B0010802B /* Bootstrapper.swift */; };
+		86C3F1182731F4470010802B /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F1172731F4470010802B /* DIContainer.swift */; };
+		86C3F11A2731FA5C0010802B /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F1192731FA5C0010802B /* Error.swift */; };
 		9DE01F16953DEB86131438FE /* Pods_Saitynas_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B507A48D3E4299FCF0BB1D6C /* Pods_Saitynas_AppTests.framework */; };
 		F1002D0130FA6D30642AA6F4 /* Pods_Saitynas_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6E8DF6022474B8F2E733C3 /* Pods_Saitynas_App.framework */; };
 /* End PBXBuildFile section */
@@ -41,8 +49,8 @@
 		2E6E8DF6022474B8F2E733C3 /* Pods_Saitynas_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saitynas_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EEB1AF240ED47B545664E53 /* Pods-Saitynas_AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saitynas_AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Saitynas_AppTests/Pods-Saitynas_AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		86328E1726E68B5F00A904DD /* Saitynas_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Saitynas_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		86328E1A26E68B5F00A904DD /* Saitynas_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Saitynas_AppApp.swift; sourceTree = "<group>"; };
-		86328E1C26E68B5F00A904DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		86328E1A26E68B5F00A904DD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		86328E1C26E68B5F00A904DD /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		86328E1E26E68B6000A904DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86328E2126E68B6000A904DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		86328E2326E68B6000A904DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +60,14 @@
 		86328E3326E68B6000A904DD /* Saitynas_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Saitynas_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86328E3726E68B6000A904DD /* Saitynas_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Saitynas_AppUITests.swift; sourceTree = "<group>"; };
 		86328E3926E68B6000A904DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86C3F1092731DC060010802B /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		86C3F10C2731DD730010802B /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		86C3F10E2731DDD30010802B /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		86C3F1102731DE0C0010802B /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		86C3F1122731E1D30010802B /* Communicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Communicator.swift; sourceTree = "<group>"; };
+		86C3F1142731F29B0010802B /* Bootstrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bootstrapper.swift; sourceTree = "<group>"; };
+		86C3F1172731F4470010802B /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		86C3F1192731FA5C0010802B /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		910C339F3A1186CFA69A06E6 /* Pods-Saitynas_App-Saitynas_AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saitynas_App-Saitynas_AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-Saitynas_App-Saitynas_AppUITests/Pods-Saitynas_App-Saitynas_AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B507A48D3E4299FCF0BB1D6C /* Pods_Saitynas_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saitynas_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD77155FEF9C765E2F0CC815 /* Pods-Saitynas_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saitynas_App.release.xcconfig"; path = "Target Support Files/Pods-Saitynas_App/Pods-Saitynas_App.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,8 +168,8 @@
 		86B06E042731B5C00016FFF0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				86328E1A26E68B5F00A904DD /* Saitynas_AppApp.swift */,
-				86328E1C26E68B5F00A904DD /* ContentView.swift */,
+				86328E1A26E68B5F00A904DD /* MainView.swift */,
+				86328E1C26E68B5F00A904DD /* WelcomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +177,7 @@
 		86B06E052731B5D50016FFF0 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				86C3F1102731DE0C0010802B /* MessageViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -168,6 +185,8 @@
 		86B06E062731B5DF0016FFF0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				86C3F1162731F42A0010802B /* DependencyInjention */,
+				86C3F1082731DBF30010802B /* Networking */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -175,8 +194,37 @@
 		86B06E072731B5EF0016FFF0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				86C3F10B2731DD450010802B /* API */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		86C3F1082731DBF30010802B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				86C3F1092731DC060010802B /* ApiClient.swift */,
+				86C3F1122731E1D30010802B /* Communicator.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		86C3F10B2731DD450010802B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				86C3F10C2731DD730010802B /* Message.swift */,
+				86C3F10E2731DDD30010802B /* Meta.swift */,
+				86C3F1192731FA5C0010802B /* Error.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		86C3F1162731F42A0010802B /* DependencyInjention */ = {
+			isa = PBXGroup;
+			children = (
+				86C3F1142731F29B0010802B /* Bootstrapper.swift */,
+				86C3F1172731F4470010802B /* DIContainer.swift */,
+			);
+			path = DependencyInjention;
 			sourceTree = "<group>";
 		};
 		AA2541D28790C86CD09E4C47 /* Frameworks */ = {
@@ -213,6 +261,7 @@
 				86328E1326E68B5F00A904DD /* Sources */,
 				86328E1426E68B5F00A904DD /* Frameworks */,
 				86328E1526E68B5F00A904DD /* Resources */,
+				ED02B5A6C5F252FAD31DF80F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,6 +299,7 @@
 				86328E2F26E68B6000A904DD /* Sources */,
 				86328E3026E68B6000A904DD /* Frameworks */,
 				86328E3126E68B6000A904DD /* Resources */,
+				1303AD4D2CAF33C371761487 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -330,6 +380,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1303AD4D2CAF33C371761487 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Saitynas_App-Saitynas_AppUITests/Pods-Saitynas_App-Saitynas_AppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Saitynas_App-Saitynas_AppUITests/Pods-Saitynas_App-Saitynas_AppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Saitynas_App-Saitynas_AppUITests/Pods-Saitynas_App-Saitynas_AppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8FB25C69405D7B10255D88C5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -374,6 +441,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		ED02B5A6C5F252FAD31DF80F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Saitynas_App/Pods-Saitynas_App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Saitynas_App/Pods-Saitynas_App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Saitynas_App/Pods-Saitynas_App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F147F92E754188DE4D4231B1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -403,8 +487,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86328E1D26E68B5F00A904DD /* ContentView.swift in Sources */,
-				86328E1B26E68B5F00A904DD /* Saitynas_AppApp.swift in Sources */,
+				86328E1D26E68B5F00A904DD /* WelcomeView.swift in Sources */,
+				86C3F10D2731DD730010802B /* Message.swift in Sources */,
+				86C3F1152731F29B0010802B /* Bootstrapper.swift in Sources */,
+				86C3F1132731E1D30010802B /* Communicator.swift in Sources */,
+				86328E1B26E68B5F00A904DD /* MainView.swift in Sources */,
+				86C3F10F2731DDD30010802B /* Meta.swift in Sources */,
+				86C3F1112731DE0C0010802B /* MessageViewModel.swift in Sources */,
+				86C3F1182731F4470010802B /* DIContainer.swift in Sources */,
+				86C3F11A2731FA5C0010802B /* Error.swift in Sources */,
+				86C3F10A2731DC060010802B /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
