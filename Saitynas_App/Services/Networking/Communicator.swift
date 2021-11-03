@@ -8,7 +8,7 @@ class Communicator {
         self.apiClient = apiClient
     }
     
-    func getMessage() {
-        apiClient.get("")
+    func getMessage(onSuccess: @escaping (Message?) -> Void, onError: @escaping (Error?) -> Void) {
+        apiClient.get("", onSuccess, onError)
     }
 }

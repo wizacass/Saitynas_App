@@ -11,7 +11,7 @@ struct MainView: App {
     
     var body: some Scene {
         WindowGroup {
-            WelcomeView(viewModel: MessageViewModel(container, "Test!"))
+            WelcomeView(viewModel: MessageViewModel(container))
         }
     }
 }

@@ -1,13 +1,22 @@
 import Foundation
+import SwiftUI
 
-class MessageViewModel {
+class MessageViewModel: ObservableObject {
     
-    var container: DIContainer
+    let container: DIContainer
     
-    var message: String
+    @Published var message: String?
+    @Published var error: Error?
     
-    init(_ container: DIContainer, _ message: String) {
+    init(_ container: DIContainer) {
         self.container = container
-        self.message = message
+    }
+    
+    func loadMessage() {
+        container.communicator?.getMessage() { [weak self] message in
+            self?.message = message?.data.message
+        } onError: { [weak self] error in
+            self?.error = error
+        }
     }
 }

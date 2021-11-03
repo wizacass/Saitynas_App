@@ -10,11 +10,12 @@ class Bootstrapper {
         
         apiClient = ApiClient(apiUrl)
         communicator = Communicator(apiClient)
-        
-        communicator.getMessage()
     }
     
     func createContainer() -> DIContainer {
-        return DIContainer()
+        let container = DIContainer()
+        container.communicator = communicator
+        
+        return container
     }
 }
