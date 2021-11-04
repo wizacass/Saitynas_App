@@ -26,6 +26,8 @@
 		86C3F11F273297390010802B /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F11E273297390010802B /* SecondaryButton.swift */; };
 		86C3F12227329B0A0010802B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F12127329B0A0010802B /* LoginView.swift */; };
 		86C3F12427329CA70010802B /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F12327329CA70010802B /* SignupView.swift */; };
+		86C3F1262732A1650010802B /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F1252732A1650010802B /* InputField.swift */; };
+		86C3F1282732A74B0010802B /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F1272732A74B0010802B /* PasswordField.swift */; };
 		9DE01F16953DEB86131438FE /* Pods_Saitynas_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B507A48D3E4299FCF0BB1D6C /* Pods_Saitynas_AppTests.framework */; };
 		F1002D0130FA6D30642AA6F4 /* Pods_Saitynas_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6E8DF6022474B8F2E733C3 /* Pods_Saitynas_App.framework */; };
 /* End PBXBuildFile section */
@@ -76,6 +78,8 @@
 		86C3F11E273297390010802B /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		86C3F12127329B0A0010802B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		86C3F12327329CA70010802B /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		86C3F1252732A1650010802B /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
+		86C3F1272732A74B0010802B /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
 		910C339F3A1186CFA69A06E6 /* Pods-Saitynas_App-Saitynas_AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saitynas_App-Saitynas_AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-Saitynas_App-Saitynas_AppUITests/Pods-Saitynas_App-Saitynas_AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B507A48D3E4299FCF0BB1D6C /* Pods_Saitynas_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saitynas_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD77155FEF9C765E2F0CC815 /* Pods-Saitynas_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saitynas_App.release.xcconfig"; path = "Target Support Files/Pods-Saitynas_App/Pods-Saitynas_App.release.xcconfig"; sourceTree = "<group>"; };
@@ -242,6 +246,8 @@
 			children = (
 				86C3F11C273294640010802B /* PrimaryButton.swift */,
 				86C3F11E273297390010802B /* SecondaryButton.swift */,
+				86C3F1252732A1650010802B /* InputField.swift */,
+				86C3F1272732A74B0010802B /* PasswordField.swift */,
 			);
 			path = Componenets;
 			sourceTree = "<group>";
@@ -520,9 +526,11 @@
 				86328E1D26E68B5F00A904DD /* WelcomeView.swift in Sources */,
 				86C3F11D273294640010802B /* PrimaryButton.swift in Sources */,
 				86C3F10D2731DD730010802B /* Message.swift in Sources */,
+				86C3F1282732A74B0010802B /* PasswordField.swift in Sources */,
 				86C3F1152731F29B0010802B /* Bootstrapper.swift in Sources */,
 				86C3F1132731E1D30010802B /* Communicator.swift in Sources */,
 				86328E1B26E68B5F00A904DD /* MainView.swift in Sources */,
+				86C3F1262732A1650010802B /* InputField.swift in Sources */,
 				86C3F10F2731DDD30010802B /* Meta.swift in Sources */,
 				86C3F1112731DE0C0010802B /* MessageViewModel.swift in Sources */,
 				86C3F1182731F4470010802B /* DIContainer.swift in Sources */,
