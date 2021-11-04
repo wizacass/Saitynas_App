@@ -1,8 +1,34 @@
 import SwiftUI
 
 struct LoginView: View {
+    @State var email: String = ""
+    @State var password: String = ""
+    
     var body: some View {
-        Text("Log in")
+        VStack {
+            Text("Welcome back!")
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+                .padding()
+            
+            Spacer()
+            
+            VStack {
+                InputField(placeholder: "Email", text: $email)
+                    .padding()
+                
+                PasswordField(placeholder: "Password", text: $password)
+                    .padding()
+            }
+            
+            Spacer()
+            
+            PrimaryButton(text: "Log in") {
+                print("Email: \(email)")
+                print("Password: \(password)")
+            }
+            .padding()
+        }
     }
 }
 
