@@ -28,6 +28,9 @@
 		86C3F12427329CA70010802B /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F12327329CA70010802B /* SignupView.swift */; };
 		86C3F1262732A1650010802B /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F1252732A1650010802B /* InputField.swift */; };
 		86C3F1282732A74B0010802B /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F1272732A74B0010802B /* PasswordField.swift */; };
+		86C3F12A273443670010802B /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F129273443670010802B /* AuthenticationManager.swift */; };
+		86C3F12C2734440E0010802B /* ContainerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F12B2734440E0010802B /* ContainerProtocol.swift */; };
+		86C3F12E273446B00010802B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F12D273446AF0010802B /* LoginViewModel.swift */; };
 		9DE01F16953DEB86131438FE /* Pods_Saitynas_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B507A48D3E4299FCF0BB1D6C /* Pods_Saitynas_AppTests.framework */; };
 		F1002D0130FA6D30642AA6F4 /* Pods_Saitynas_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6E8DF6022474B8F2E733C3 /* Pods_Saitynas_App.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +83,9 @@
 		86C3F12327329CA70010802B /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		86C3F1252732A1650010802B /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		86C3F1272732A74B0010802B /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
+		86C3F129273443670010802B /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		86C3F12B2734440E0010802B /* ContainerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerProtocol.swift; sourceTree = "<group>"; };
+		86C3F12D273446AF0010802B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		910C339F3A1186CFA69A06E6 /* Pods-Saitynas_App-Saitynas_AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saitynas_App-Saitynas_AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-Saitynas_App-Saitynas_AppUITests/Pods-Saitynas_App-Saitynas_AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B507A48D3E4299FCF0BB1D6C /* Pods_Saitynas_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saitynas_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD77155FEF9C765E2F0CC815 /* Pods-Saitynas_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saitynas_App.release.xcconfig"; path = "Target Support Files/Pods-Saitynas_App/Pods-Saitynas_App.release.xcconfig"; sourceTree = "<group>"; };
@@ -192,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				86C3F1102731DE0C0010802B /* MessageViewModel.swift */,
+				86C3F12D273446AF0010802B /* LoginViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -201,6 +208,7 @@
 			children = (
 				86C3F1162731F42A0010802B /* DependencyInjention */,
 				86C3F1082731DBF30010802B /* Networking */,
+				86C3F129273443670010802B /* AuthenticationManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -237,6 +245,7 @@
 			children = (
 				86C3F1142731F29B0010802B /* Bootstrapper.swift */,
 				86C3F1172731F4470010802B /* DIContainer.swift */,
+				86C3F12B2734440E0010802B /* ContainerProtocol.swift */,
 			);
 			path = DependencyInjention;
 			sourceTree = "<group>";
@@ -530,12 +539,15 @@
 				86C3F1152731F29B0010802B /* Bootstrapper.swift in Sources */,
 				86C3F1132731E1D30010802B /* Communicator.swift in Sources */,
 				86328E1B26E68B5F00A904DD /* MainView.swift in Sources */,
+				86C3F12C2734440E0010802B /* ContainerProtocol.swift in Sources */,
 				86C3F1262732A1650010802B /* InputField.swift in Sources */,
+				86C3F12A273443670010802B /* AuthenticationManager.swift in Sources */,
 				86C3F10F2731DDD30010802B /* Meta.swift in Sources */,
 				86C3F1112731DE0C0010802B /* MessageViewModel.swift in Sources */,
 				86C3F1182731F4470010802B /* DIContainer.swift in Sources */,
 				86C3F12227329B0A0010802B /* LoginView.swift in Sources */,
 				86C3F11A2731FA5C0010802B /* Error.swift in Sources */,
+				86C3F12E273446B00010802B /* LoginViewModel.swift in Sources */,
 				86C3F10A2731DC060010802B /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -699,7 +711,7 @@
 				DEVELOPMENT_TEAM = 23Q3TDVZ8T;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Saitynas_App/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -722,7 +734,7 @@
 				DEVELOPMENT_TEAM = 23Q3TDVZ8T;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Saitynas_App/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -743,7 +755,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23Q3TDVZ8T;
 				INFOPLIST_FILE = Saitynas_AppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -766,7 +778,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23Q3TDVZ8T;
 				INFOPLIST_FILE = Saitynas_AppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

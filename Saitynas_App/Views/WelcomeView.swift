@@ -29,7 +29,7 @@ struct WelcomeView: View {
                 PrimaryButton(text: "Log in") {
                     isLoginShown = true
                 }.sheet(isPresented: $isLoginShown) {
-                   LoginView()
+                    LoginView(viewModel: LoginViewModel(viewModel.container))
                 }
                 
                 SecondaryButton(text: "Sign up") {

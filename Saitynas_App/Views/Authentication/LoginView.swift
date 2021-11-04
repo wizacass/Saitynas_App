@@ -1,8 +1,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State var email: String = ""
-    @State var password: String = ""
+    @ObservedObject var viewModel: LoginViewModel
     
     var body: some View {
         VStack {
@@ -10,30 +9,30 @@ struct LoginView: View {
                 .font(.largeTitle)
                 .fontWeight(.semibold)
                 .padding()
+                .padding(.top, 16)
             
             Spacer()
             
             VStack {
-                InputField(placeholder: "Email", text: $email)
+                InputField(placeholder: "Email", text: $viewModel.email)
                     .padding()
                 
-                PasswordField(placeholder: "Password", text: $password)
+                PasswordField(placeholder: "Password", text: $viewModel.password)
                     .padding()
             }
             
             Spacer()
             
-            PrimaryButton(text: "Log in") {
-                print("Email: \(email)")
-                print("Password: \(password)")
-            }
-            .padding()
+            PrimaryButton(text: "Log in", action: viewModel.login)
+                .padding()
         }
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
+    static let data = LoginViewModel(DIContainer())
+    
     static var previews: some View {
-        LoginView()
+        LoginView(viewModel: data)
     }
 }

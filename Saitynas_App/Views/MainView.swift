@@ -3,7 +3,7 @@ import SwiftUI
 @main
 struct MainView: App {
     
-    var container: DIContainer
+    var container: ContainerProtocol
     
     init() {
         container =  Bootstrapper().createContainer()
