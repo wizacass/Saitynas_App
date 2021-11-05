@@ -37,6 +37,7 @@
 		86DF000827351B6D00B1D5F6 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF000727351B6D00B1D5F6 /* KeychainStorage.swift */; };
 		86DF000A2735201000B1D5F6 /* UserTokensRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF00092735201000B1D5F6 /* UserTokensRepository.swift */; };
 		86DF000C27352A3600B1D5F6 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF000B27352A3600B1D5F6 /* UserView.swift */; };
+		86DF000E273535FC00B1D5F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF000D273535FC00B1D5F6 /* ContentView.swift */; };
 		9DE01F16953DEB86131438FE /* Pods_Saitynas_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B507A48D3E4299FCF0BB1D6C /* Pods_Saitynas_AppTests.framework */; };
 		F1002D0130FA6D30642AA6F4 /* Pods_Saitynas_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6E8DF6022474B8F2E733C3 /* Pods_Saitynas_App.framework */; };
 /* End PBXBuildFile section */
@@ -98,6 +99,7 @@
 		86DF000727351B6D00B1D5F6 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
 		86DF00092735201000B1D5F6 /* UserTokensRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokensRepository.swift; sourceTree = "<group>"; };
 		86DF000B27352A3600B1D5F6 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		86DF000D273535FC00B1D5F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		910C339F3A1186CFA69A06E6 /* Pods-Saitynas_App-Saitynas_AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saitynas_App-Saitynas_AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-Saitynas_App-Saitynas_AppUITests/Pods-Saitynas_App-Saitynas_AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B507A48D3E4299FCF0BB1D6C /* Pods_Saitynas_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saitynas_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD77155FEF9C765E2F0CC815 /* Pods-Saitynas_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saitynas_App.release.xcconfig"; path = "Target Support Files/Pods-Saitynas_App/Pods-Saitynas_App.release.xcconfig"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				86C3F12027329AF90010802B /* Authentication */,
 				86C3F11B2732943B0010802B /* Componenets */,
 				86328E1A26E68B5F00A904DD /* MainView.swift */,
+				86DF000D273535FC00B1D5F6 /* ContentView.swift */,
 				86328E1C26E68B5F00A904DD /* WelcomeView.swift */,
 				86DF000B27352A3600B1D5F6 /* UserView.swift */,
 			);
@@ -566,6 +569,7 @@
 				86DF000A2735201000B1D5F6 /* UserTokensRepository.swift in Sources */,
 				86C3F10D2731DD730010802B /* Message.swift in Sources */,
 				86C3F1282732A74B0010802B /* PasswordField.swift in Sources */,
+				86DF000E273535FC00B1D5F6 /* ContentView.swift in Sources */,
 				86C3F1152731F29B0010802B /* Bootstrapper.swift in Sources */,
 				86C3F1132731E1D30010802B /* Communicator.swift in Sources */,
 				86328E1B26E68B5F00A904DD /* MainView.swift in Sources */,

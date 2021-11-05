@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct UserView: View {
-    private var authManager: AuthenticationManager?
+    @EnvironmentObject var c: DIContainer
     
     var body: some View {
         VStack {
@@ -11,8 +11,7 @@ struct UserView: View {
             Spacer()
             
             SecondaryButton(text: "Logout") {
-                authManager?.logout()
-                print("Loggin out!")
+                c.authenticationManager?.logout()
             }
         }.padding()
     }

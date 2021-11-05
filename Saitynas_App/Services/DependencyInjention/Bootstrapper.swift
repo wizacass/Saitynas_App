@@ -21,7 +21,7 @@ class Bootstrapper {
         authenticationManager = AuthenticationManager(accessCommunicator, tokensRespository)
     }
     
-    func createContainer() -> ContainerProtocol {
+    func createContainer() -> DIContainer {
         let container = DIContainer()
         container.communicator = communicator
         
