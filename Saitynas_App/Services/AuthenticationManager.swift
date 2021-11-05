@@ -2,6 +2,8 @@ import Foundation
 
 class AuthenticationManager {
     
+    var isLoggedIn: Bool { return repository.accessToken != nil }
+    
     private var communicator: AccessCommunicator
     private var repository: UserTokensRepository
     
