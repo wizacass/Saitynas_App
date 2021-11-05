@@ -13,7 +13,7 @@ class LoginViewModel: ObservableObject {
         authManager = container.authenticationManager
     }
     
-    func login() {
-        authManager?.login(email, password)
+    func login(onComplete handleLogin: @escaping () -> Void) {
+        authManager?.login(email, password, onComplete: handleLogin)
     }
 }

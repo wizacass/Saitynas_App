@@ -3,18 +3,20 @@ import SwiftUI
 struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
     
+    @State var isLogginIn: Bool = false
+        
     var body: some View {
         VStack {
             Text("Welcome back!")
                 .font(.largeTitle)
                 .fontWeight(.semibold)
                 .padding()
-                .padding(.top, 16)
             
             Spacer()
             
             VStack {
                 InputField(placeholder: "Email", text: $viewModel.email)
+                    .textContentType(.emailAddress)
                     .padding()
                 
                 PasswordField(placeholder: "Password", text: $viewModel.password)
@@ -23,8 +25,24 @@ struct LoginView: View {
             
             Spacer()
             
-            PrimaryButton(text: "Log in", action: viewModel.login)
-                .padding()
+            PrimaryButton(text: loginButtonText(), action: handleLogin)
+            .disabled(isLogginIn)
+            .padding()
+        }
+        .padding(.top, 16)
+        .padding(.bottom, 16)
+    }
+}
+
+extension LoginView {
+    func loginButtonText() -> String {
+        return !isLogginIn ? "Log in" : "Loading..."
+    }
+    
+    func handleLogin() {
+        isLogginIn = true
+        viewModel.login() {
+            isLogginIn = false
         }
     }
 }
