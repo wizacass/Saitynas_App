@@ -6,7 +6,8 @@ target 'Saitynas_App' do
   use_frameworks!
 
   # Pods for Saitynas_App
-    pod 'Alamofire', '~> 5.4'
+  pod 'Alamofire', '~> 5.4'
+  pod 'KeychainSwift', '~> 19.0'
 
   target 'Saitynas_AppTests' do
     inherit! :search_paths

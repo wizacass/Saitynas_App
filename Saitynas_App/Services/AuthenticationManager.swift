@@ -3,22 +3,26 @@ import Foundation
 class AuthenticationManager {
     
     private var communicator: AccessCommunicator
+    private var repository: UserTokensRepository
     
-    init(_ communicator: AccessCommunicator) {
+    init(_ communicator: AccessCommunicator, _ repository: UserTokensRepository) {
         self.communicator = communicator
+        self.repository = repository
     }
     
-    func login(_ email: String, _ password: String, onComplete handleLogin: @escaping () -> Void) {
-        communicator.login(email, password) { tokens in
-            print("JWT: \(tokens?.jwt)")
-            print("Refresh: \(tokens?.refreshToken)")
-            handleLogin()
+    func login(_ email: String, _ password: String, onComplete handleLogin: @escaping (Error?) -> Void) {
+        communicator.login(email, password) { [weak self] tokens in
+            self?.repository.accessToken = tokens?.jwt
+            self?.repository.refreshToken = tokens?.refreshToken
+            handleLogin(nil)
         } onError: { error in
-            print("Error!")
-            print(error?.title)
-            handleLogin()
+            handleLogin(error)
         }
     }
     
     func signup() {}
+    
+    func logout() {
+        repository.clearAll()
+    }
 }

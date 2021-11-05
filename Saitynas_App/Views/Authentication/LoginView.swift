@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct LoginView: View {
+    @Environment(\.dismiss) var dismiss
+    
     @ObservedObject var viewModel: LoginViewModel
     
     @State var isLogginIn: Bool = false
@@ -28,6 +30,13 @@ struct LoginView: View {
             PrimaryButton(text: loginButtonText(), action: handleLogin)
             .disabled(isLogginIn)
             .padding()
+            .alert(item: $viewModel.error) { error in
+                Alert(
+                    title: Text("Login error!"),
+                    message: Text(error.title),
+                    dismissButton: .default(Text("Ok"))
+                )
+            }
         }
         .padding(.top, 16)
         .padding(.bottom, 16)
@@ -43,6 +52,10 @@ extension LoginView {
         isLogginIn = true
         viewModel.login() {
             isLogginIn = false
+            
+            if viewModel.error == nil {
+                dismiss()
+            }
         }
     }
 }

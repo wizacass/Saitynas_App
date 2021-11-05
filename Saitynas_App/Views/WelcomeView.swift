@@ -18,7 +18,7 @@ struct WelcomeView: View {
                 .alert(item: $viewModel.error) { error in
                     Alert(
                         title: Text(error.title),
-                        message:alertMessage(error.details),
+                        message: alertMessage(error.details),
                         dismissButton: .default(Text("Ok"))
                     )
                 }
