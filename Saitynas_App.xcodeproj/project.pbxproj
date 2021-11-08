@@ -14,6 +14,9 @@
 		86328E2226E68B6000A904DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86328E2126E68B6000A904DD /* Preview Assets.xcassets */; };
 		86328E2D26E68B6000A904DD /* Saitynas_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86328E2C26E68B6000A904DD /* Saitynas_AppTests.swift */; };
 		86328E3826E68B6000A904DD /* Saitynas_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86328E3726E68B6000A904DD /* Saitynas_AppUITests.swift */; };
+		86ABEEFB27399FD500D5B601 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ABEEFA27399FD500D5B601 /* StringExtensions.swift */; };
+		86ABEF002739A1B600D5B601 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86ABEF022739A1B600D5B601 /* Localizable.strings */; };
+		86ABEF042739A3DA00D5B601 /* ImageNameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ABEF032739A3DA00D5B601 /* ImageNameConstants.swift */; };
 		86C3F10A2731DC060010802B /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F1092731DC060010802B /* ApiClient.swift */; };
 		86C3F10D2731DD730010802B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F10C2731DD730010802B /* Message.swift */; };
 		86C3F10F2731DDD30010802B /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3F10E2731DDD30010802B /* Meta.swift */; };
@@ -76,6 +79,9 @@
 		86328E3326E68B6000A904DD /* Saitynas_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Saitynas_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86328E3726E68B6000A904DD /* Saitynas_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Saitynas_AppUITests.swift; sourceTree = "<group>"; };
 		86328E3926E68B6000A904DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86ABEEFA27399FD500D5B601 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		86ABEF012739A1B600D5B601 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		86ABEF032739A3DA00D5B601 /* ImageNameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNameConstants.swift; sourceTree = "<group>"; };
 		86C3F1092731DC060010802B /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		86C3F10C2731DD730010802B /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		86C3F10E2731DDD30010802B /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
@@ -161,12 +167,12 @@
 			isa = PBXGroup;
 			children = (
 				86B06E062731B5DF0016FFF0 /* Services */,
+				86ABEEF927399FBB00D5B601 /* Extensions */,
 				86B06E072731B5EF0016FFF0 /* Models */,
 				86B06E052731B5D50016FFF0 /* View Models */,
 				86B06E042731B5C00016FFF0 /* UI */,
 				86328E1A26E68B5F00A904DD /* SaitynasApp.swift */,
-				86328E1E26E68B6000A904DD /* Assets.xcassets */,
-				86328E2326E68B6000A904DD /* Info.plist */,
+				86ABEEFF2739A18100D5B601 /* Resources */,
 				86328E2026E68B6000A904DD /* Preview Content */,
 			);
 			path = Saitynas_App;
@@ -198,10 +204,37 @@
 			path = Saitynas_AppUITests;
 			sourceTree = "<group>";
 		};
+		86ABEEF927399FBB00D5B601 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				86ABEEFA27399FD500D5B601 /* StringExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		86ABEEFF2739A18100D5B601 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				86ABEF022739A1B600D5B601 /* Localizable.strings */,
+				86328E2326E68B6000A904DD /* Info.plist */,
+				86328E1E26E68B6000A904DD /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		86ABEF052739A44900D5B601 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				86ABEF032739A3DA00D5B601 /* ImageNameConstants.swift */,
+				86DF00122739731800B1D5F6 /* UIConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		86B06E042731B5C00016FFF0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				86DF00122739731800B1D5F6 /* UIConstants.swift */,
+				86ABEF052739A44900D5B601 /* Constants */,
 				86DF00182739795000B1D5F6 /* Extensions */,
 				86DF000F2739720600B1D5F6 /* Styles */,
 				86C3F12027329AF90010802B /* Authentication */,
@@ -447,6 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86328E2226E68B6000A904DD /* Preview Assets.xcassets in Resources */,
+				86ABEF002739A1B600D5B601 /* Localizable.strings in Resources */,
 				86328E1F26E68B6000A904DD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -579,6 +613,7 @@
 				86DF00032734A56A00B1D5F6 /* AccessTokens.swift in Sources */,
 				86DF000C27352A3600B1D5F6 /* UserView.swift in Sources */,
 				86DF00012734A31000B1D5F6 /* AccessCommunicator.swift in Sources */,
+				86ABEF042739A3DA00D5B601 /* ImageNameConstants.swift in Sources */,
 				86328E1D26E68B5F00A904DD /* AuthenticationView.swift in Sources */,
 				86DF0015273973C200B1D5F6 /* SecondaryButtonStyle.swift in Sources */,
 				86DF000A2735201000B1D5F6 /* UserTokensRepository.swift in Sources */,
@@ -596,6 +631,7 @@
 				86DF00132739731800B1D5F6 /* UIConstants.swift in Sources */,
 				86DF00112739727400B1D5F6 /* PrimaryButtonStyle.swift in Sources */,
 				86C3F12227329B0A0010802B /* LoginView.swift in Sources */,
+				86ABEEFB27399FD500D5B601 /* StringExtensions.swift in Sources */,
 				86C3F11A2731FA5C0010802B /* Error.swift in Sources */,
 				86DF001A2739796200B1D5F6 /* ColorExtensions.swift in Sources */,
 				86C3F12E273446B00010802B /* LoginViewModel.swift in Sources */,
@@ -634,6 +670,17 @@
 			targetProxy = 86328E3426E68B6000A904DD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		86ABEF022739A1B600D5B601 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86ABEF012739A1B600D5B601 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		86328E3A26E68B6000A904DD /* Debug */ = {

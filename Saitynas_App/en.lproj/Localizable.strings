@@ -1,0 +1,19 @@
+"app_title" = "Saitynai App";
+
+// MARK: - Common
+"login" = "Log in";
+"signup" = "Sign up";
+"loading" = "Loading...";
+"ok" = "OK";
+"email" = "Email";
+"password" = "Password";
+"error" = "Error!";
+
+// MARK: - Login View
+"login_view_title" = "Welcome back!";
+"email_placeholder" = "email@example.com";
+"password_placeholder" = "password";
+
+// MARK: - Errors
+"parameter_empty" = "Input field(s) cannot be left blank!";
+"authentication_error" = "Invalid username or password!";

@@ -11,7 +11,7 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
-            Text("Welcome back!")
+            Text("login_view_title".localized)
                 .font(.largeTitle)
                 .fontWeight(.semibold)
                 .padding()
@@ -22,20 +22,20 @@ struct LoginView: View {
             VStack {
                 VStack {
                     InputField(
-                        placeholder: "email@example.com",
-                        label: "Email",
-                        imageName: "at",
+                        placeholder: "email_placeholder".localized,
+                        label: "email".localized,
+                        imageName: ImageNameConstants.emailIcon,
                         contentType: .emailAddress,
                         isSecure: false,
                         text: $viewModel.email
                     ).padding()
                     
                     InputField(
-                        placeholder: "password",
-                        label: "Password",
-                        imageName: "lock.fill",
+                        placeholder: "password_placeholder".localized,
+                        label: "password".localized,
+                        imageName: ImageNameConstants.passwordicon,
                         contentType: .password,
-                        isSecure: false,
+                        isSecure: true,
                         text: $viewModel.password
                     ).padding()
                 }
@@ -45,13 +45,7 @@ struct LoginView: View {
                     .buttonStyle(PrimaryButtonStyle())
                     .disabled(isLogginIn)
                     .padding()
-                    .alert(item: $viewModel.error) { error in
-                        Alert(
-                            title: Text(error.title),
-                            message: Text(error.details ?? "password"),
-                            dismissButton: .default(Text("Ok"))
-                        )
-                    }
+                    .alert(item: $viewModel.error, content: createAlert)
             }
             .background(
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
@@ -68,7 +62,7 @@ struct LoginView: View {
 
 extension LoginView {
     func loginButtonText() -> String {
-        return !isLogginIn ? "Log in" : "Loading..."
+        return "\(!isLogginIn ? "login" : "loading")".localized
     }
     
     func handleLogin() {
@@ -81,6 +75,14 @@ extension LoginView {
                 dismiss()
             }
         }
+    }
+    
+    func createAlert(_ error: Error) -> Alert {
+        return Alert(
+            title: Text("error".localized),
+            message: Text(error.title.localized),
+            dismissButton: .default(Text("ok".localized))
+        )
     }
 }
 
