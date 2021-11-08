@@ -13,10 +13,11 @@ struct UserView: View {
                 
                 Spacer()
                 
-                SecondaryButton(text: "Logout") {
+                Button("Logout") {
                     c.authenticationManager?.logout()
                     didLogOut = true
                 }
+                .buttonStyle(SecondaryButtonStyle())
                 
                 NavigationLink(
                     destination: AuthenticationView(viewModel: MessageViewModel(c)),
