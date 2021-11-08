@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1CA268ED8CAB701AE3ED67DF /* Pods_Saitynas_App_Saitynas_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C54F8997991B2E65F55F3B7 /* Pods_Saitynas_App_Saitynas_AppUITests.framework */; };
-		86328E1B26E68B5F00A904DD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86328E1A26E68B5F00A904DD /* MainView.swift */; };
-		86328E1D26E68B5F00A904DD /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86328E1C26E68B5F00A904DD /* WelcomeView.swift */; };
+		86328E1B26E68B5F00A904DD /* SaitynasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86328E1A26E68B5F00A904DD /* SaitynasApp.swift */; };
+		86328E1D26E68B5F00A904DD /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86328E1C26E68B5F00A904DD /* AuthenticationView.swift */; };
 		86328E1F26E68B6000A904DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86328E1E26E68B6000A904DD /* Assets.xcassets */; };
 		86328E2226E68B6000A904DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86328E2126E68B6000A904DD /* Preview Assets.xcassets */; };
 		86328E2D26E68B6000A904DD /* Saitynas_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86328E2C26E68B6000A904DD /* Saitynas_AppTests.swift */; };
@@ -37,7 +37,6 @@
 		86DF000827351B6D00B1D5F6 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF000727351B6D00B1D5F6 /* KeychainStorage.swift */; };
 		86DF000A2735201000B1D5F6 /* UserTokensRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF00092735201000B1D5F6 /* UserTokensRepository.swift */; };
 		86DF000C27352A3600B1D5F6 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF000B27352A3600B1D5F6 /* UserView.swift */; };
-		86DF000E273535FC00B1D5F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF000D273535FC00B1D5F6 /* ContentView.swift */; };
 		9DE01F16953DEB86131438FE /* Pods_Saitynas_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B507A48D3E4299FCF0BB1D6C /* Pods_Saitynas_AppTests.framework */; };
 		F1002D0130FA6D30642AA6F4 /* Pods_Saitynas_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6E8DF6022474B8F2E733C3 /* Pods_Saitynas_App.framework */; };
 /* End PBXBuildFile section */
@@ -65,8 +64,8 @@
 		2E6E8DF6022474B8F2E733C3 /* Pods_Saitynas_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saitynas_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EEB1AF240ED47B545664E53 /* Pods-Saitynas_AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saitynas_AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Saitynas_AppTests/Pods-Saitynas_AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		86328E1726E68B5F00A904DD /* Saitynas_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Saitynas_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		86328E1A26E68B5F00A904DD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		86328E1C26E68B5F00A904DD /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		86328E1A26E68B5F00A904DD /* SaitynasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaitynasApp.swift; sourceTree = "<group>"; };
+		86328E1C26E68B5F00A904DD /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		86328E1E26E68B6000A904DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86328E2126E68B6000A904DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		86328E2326E68B6000A904DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,7 +98,6 @@
 		86DF000727351B6D00B1D5F6 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
 		86DF00092735201000B1D5F6 /* UserTokensRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokensRepository.swift; sourceTree = "<group>"; };
 		86DF000B27352A3600B1D5F6 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
-		86DF000D273535FC00B1D5F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		910C339F3A1186CFA69A06E6 /* Pods-Saitynas_App-Saitynas_AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saitynas_App-Saitynas_AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-Saitynas_App-Saitynas_AppUITests/Pods-Saitynas_App-Saitynas_AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B507A48D3E4299FCF0BB1D6C /* Pods_Saitynas_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saitynas_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD77155FEF9C765E2F0CC815 /* Pods-Saitynas_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saitynas_App.release.xcconfig"; path = "Target Support Files/Pods-Saitynas_App/Pods-Saitynas_App.release.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +162,7 @@
 				86B06E072731B5EF0016FFF0 /* Models */,
 				86B06E052731B5D50016FFF0 /* View Models */,
 				86B06E042731B5C00016FFF0 /* Views */,
+				86328E1A26E68B5F00A904DD /* SaitynasApp.swift */,
 				86328E1E26E68B6000A904DD /* Assets.xcassets */,
 				86328E2326E68B6000A904DD /* Info.plist */,
 				86328E2026E68B6000A904DD /* Preview Content */,
@@ -202,9 +201,7 @@
 			children = (
 				86C3F12027329AF90010802B /* Authentication */,
 				86C3F11B2732943B0010802B /* Componenets */,
-				86328E1A26E68B5F00A904DD /* MainView.swift */,
-				86DF000D273535FC00B1D5F6 /* ContentView.swift */,
-				86328E1C26E68B5F00A904DD /* WelcomeView.swift */,
+				86328E1C26E68B5F00A904DD /* AuthenticationView.swift */,
 				86DF000B27352A3600B1D5F6 /* UserView.swift */,
 			);
 			path = Views;
@@ -564,15 +561,14 @@
 				86DF000C27352A3600B1D5F6 /* UserView.swift in Sources */,
 				86C3F11F273297390010802B /* SecondaryButton.swift in Sources */,
 				86DF00012734A31000B1D5F6 /* AccessCommunicator.swift in Sources */,
-				86328E1D26E68B5F00A904DD /* WelcomeView.swift in Sources */,
+				86328E1D26E68B5F00A904DD /* AuthenticationView.swift in Sources */,
 				86C3F11D273294640010802B /* PrimaryButton.swift in Sources */,
 				86DF000A2735201000B1D5F6 /* UserTokensRepository.swift in Sources */,
 				86C3F10D2731DD730010802B /* Message.swift in Sources */,
 				86C3F1282732A74B0010802B /* PasswordField.swift in Sources */,
-				86DF000E273535FC00B1D5F6 /* ContentView.swift in Sources */,
 				86C3F1152731F29B0010802B /* Bootstrapper.swift in Sources */,
 				86C3F1132731E1D30010802B /* Communicator.swift in Sources */,
-				86328E1B26E68B5F00A904DD /* MainView.swift in Sources */,
+				86328E1B26E68B5F00A904DD /* SaitynasApp.swift in Sources */,
 				86C3F12C2734440E0010802B /* ContainerProtocol.swift in Sources */,
 				86C3F1262732A1650010802B /* InputField.swift in Sources */,
 				86DF000627351AE400B1D5F6 /* KeyValueStorageProtocol.swift in Sources */,

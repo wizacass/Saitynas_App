@@ -6,7 +6,9 @@ struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
     
     @State var isLogginIn: Bool = false
-        
+    
+    @Binding var didLogIn: Bool
+    
     var body: some View {
         VStack {
             Text("Welcome back!")
@@ -28,15 +30,15 @@ struct LoginView: View {
             Spacer()
             
             PrimaryButton(text: loginButtonText(), action: handleLogin)
-            .disabled(isLogginIn)
-            .padding()
-            .alert(item: $viewModel.error) { error in
-                Alert(
-                    title: Text("Login error!"),
-                    message: Text(error.title),
-                    dismissButton: .default(Text("Ok"))
-                )
-            }
+                .disabled(isLogginIn)
+                .padding()
+                .alert(item: $viewModel.error) { error in
+                    Alert(
+                        title: Text(error.title),
+                        message: Text(error.details ?? ""),
+                        dismissButton: .default(Text("Ok"))
+                    )
+                }
         }
         .padding(.top, 16)
         .padding(.bottom, 16)
@@ -54,6 +56,7 @@ extension LoginView {
             isLogginIn = false
             
             if viewModel.error == nil {
+                didLogIn = true
                 dismiss()
             }
         }
@@ -64,6 +67,6 @@ struct LoginView_Previews: PreviewProvider {
     static let data = LoginViewModel(DIContainer())
     
     static var previews: some View {
-        LoginView(viewModel: data)
+        LoginView(viewModel: data, didLogIn: .constant(false))
     }
 }

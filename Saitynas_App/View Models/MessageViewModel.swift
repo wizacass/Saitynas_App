@@ -3,12 +3,12 @@ import SwiftUI
 
 class MessageViewModel: ObservableObject {
     
-    let container: ContainerProtocol
+    let container: DIContainer
     
     @Published var message: String?
     @Published var error: Error?
     
-    init(_ container: ContainerProtocol) {
+    init(_ container: DIContainer) {
         self.container = container
     }
     

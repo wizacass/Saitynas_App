@@ -3,15 +3,7 @@ import Combine
 
 class AuthenticationManager: ObservableObject  {
     
-    let didChange = PassthroughSubject<AuthenticationManager,Never>()
-    let willChange = PassthroughSubject<AuthenticationManager,Never>()
-    
-    @Published var isLoggedIn: Bool {
-        didSet {
-            didChange.send(self)
-            print("Login state changed to \(isLoggedIn)")
-        }
-    }
+    @Published var isLoggedIn: Bool
     
     private var communicator: AccessCommunicator
     private var repository: UserTokensRepository
@@ -25,11 +17,12 @@ class AuthenticationManager: ObservableObject  {
     
     func login(_ email: String, _ password: String, onComplete handleLogin: @escaping (Error?) -> Void) {
         communicator.login(email, password) { [weak self] tokens in
-            self?.repository.accessToken = tokens?.jwt
-            self?.repository.refreshToken = tokens?.refreshToken
-            self?.isLoggedIn = true
+            guard let tokens = tokens else {
+                handleLogin(Error.genericError())
+                return
+            }
             
-            print("Logged in!")
+            self?.saveTokens(tokens)
             
             handleLogin(nil)
         } onError: { error in
@@ -39,9 +32,14 @@ class AuthenticationManager: ObservableObject  {
     
     func signup() {}
     
+    private func saveTokens(_ tokens: AccessTokens) {
+        repository.accessToken = tokens.jwt
+        repository.refreshToken = tokens.refreshToken
+        isLoggedIn = true
+    }
+    
     func logout() {
         repository.clearAll()
         isLoggedIn = false
-        print("Logged out!")
     }
 }
