@@ -11,25 +11,25 @@ struct AuthenticationView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Saitynas App")
+                Text("app_title".localized)
                     .font(.largeTitle)
                     .padding()
                 
-                Text(viewModel.message ?? "Loading...")
+                Text(viewModel.message ?? "loading".localized)
                     .onAppear(perform: viewModel.loadMessage)
                     .padding()
                     .alert(item: $viewModel.error) { error in
                         Alert(
                             title: Text(error.title),
                             message: alertMessage(error.details),
-                            dismissButton: .default(Text("Ok"))
+                            dismissButton: .default(Text("ok".localized))
                         )
                     }
                 
                 Spacer()
                 
                 VStack {
-                    Button("Log in") {
+                    Button("login".localized) {
                         isLoginShown = true
                     }
                     .buttonStyle(PrimaryButtonStyle())
@@ -41,7 +41,7 @@ struct AuthenticationView: View {
                         )
                     }
                     
-                    Button("Sign up") {
+                    Button("signup".localized) {
                         isSignupShown = true
                     }
                     .buttonStyle(SecondaryButtonStyle())

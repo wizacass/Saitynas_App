@@ -1,0 +1,14 @@
+"app_title" = "Saitynai App";
+
+// MARK: - Common
+"login" = "Log in";
+"signup" = "Sign up";
+"loading" = "Loading...";
+"ok" = "OK";
+"email" = "Email";
+"password" = "Password";
+
+// MARK: - Login View
+"login_view_title" = "Welcome back!";
+"email_placeholder" = "wmail@example.com";
+"password_placeholder" = "password";

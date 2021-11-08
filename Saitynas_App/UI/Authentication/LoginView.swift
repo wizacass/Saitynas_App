@@ -11,7 +11,7 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
-            Text("Welcome back!")
+            Text("login_view_title".localized)
                 .font(.largeTitle)
                 .fontWeight(.semibold)
                 .padding()
@@ -22,8 +22,8 @@ struct LoginView: View {
             VStack {
                 VStack {
                     InputField(
-                        placeholder: "email@example.com",
-                        label: "Email",
+                        placeholder: "email_placeholder".localized,
+                        label: "email".localized,
                         imageName: "at",
                         contentType: .emailAddress,
                         isSecure: false,
@@ -31,8 +31,8 @@ struct LoginView: View {
                     ).padding()
                     
                     InputField(
-                        placeholder: "password",
-                        label: "Password",
+                        placeholder: "password_placeholder".localized,
+                        label: "password".localized,
                         imageName: "lock.fill",
                         contentType: .password,
                         isSecure: false,
@@ -48,8 +48,8 @@ struct LoginView: View {
                     .alert(item: $viewModel.error) { error in
                         Alert(
                             title: Text(error.title),
-                            message: Text(error.details ?? "password"),
-                            dismissButton: .default(Text("Ok"))
+                            message: Text(error.details ?? "generic_error"),
+                            dismissButton: .default(Text("ok".localized))
                         )
                     }
             }
@@ -68,7 +68,7 @@ struct LoginView: View {
 
 extension LoginView {
     func loginButtonText() -> String {
-        return !isLogginIn ? "Log in" : "Loading..."
+        return "\(!isLogginIn ? "login" : "loading")".localized
     }
     
     func handleLogin() {
