@@ -29,18 +29,22 @@ struct AuthenticationView: View {
                 Spacer()
                 
                 VStack {
-                    PrimaryButton(text: "Log in") {
+                    Button("Log in") {
                         isLoginShown = true
-                    }.sheet(isPresented: $isLoginShown) {
+                    }
+                    .buttonStyle(PrimaryButtonStyle())
+                    .sheet(isPresented: $isLoginShown) {
                         LoginView(
                             viewModel: LoginViewModel(viewModel.container),
                             didLogIn: $didLogIn
                         )
                     }
                     
-                    SecondaryButton(text: "Sign up") {
+                    Button("Sign up") {
                         isSignupShown = true
-                    }.sheet(isPresented: $isSignupShown) {
+                    }
+                    .buttonStyle(SecondaryButtonStyle())
+                    .sheet(isPresented: $isSignupShown) {
                         SignupView()
                     }
                 }.padding()

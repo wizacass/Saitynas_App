@@ -29,7 +29,8 @@ struct LoginView: View {
             
             Spacer()
             
-            PrimaryButton(text: loginButtonText(), action: handleLogin)
+            Button(loginButtonText(), action: handleLogin)
+                .buttonStyle(PrimaryButtonStyle())
                 .disabled(isLogginIn)
                 .padding()
                 .alert(item: $viewModel.error) { error in
