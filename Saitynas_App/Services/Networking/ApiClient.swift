@@ -21,10 +21,26 @@ class ApiClient
         _ onSuccess: @escaping (T?) -> Void,
         _ onError: @escaping (Error?) -> Void
     ) {
-        let url = "\(baseUrl)/\(endpoint)"
+        let url = "\(baseUrl)\(endpoint)"
         let headers = createHeaders()
         
         AF.request(url, method: .get, headers: headers)
+            .validate()
+            .responseJSON(queue: queue) { [weak self] response in
+                self?.handleResponse(response, onSuccess, onError)
+            }
+    }
+    
+    func post<T: Decodable>(
+        _ endpoint: String,
+        _ body: [String: Any],
+        _ onSuccess: @escaping (T?) -> Void,
+        _ onError: @escaping (Error?) -> Void
+    ) {
+        let url = "\(baseUrl)\(endpoint)"
+        let headers = createHeaders()
+        
+        AF.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers)
             .validate()
             .responseJSON(queue: queue) { [weak self] response in
                 self?.handleResponse(response, onSuccess, onError)

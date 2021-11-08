@@ -1,8 +1,13 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State var email: String = ""
-    @State var password: String = ""
+    @Environment(\.dismiss) var dismiss
+    
+    @ObservedObject var viewModel: LoginViewModel
+    
+    @State var isLogginIn: Bool = false
+    
+    @Binding var didLogIn: Bool
     
     var body: some View {
         VStack {
@@ -14,26 +19,54 @@ struct LoginView: View {
             Spacer()
             
             VStack {
-                InputField(placeholder: "Email", text: $email)
+                InputField(placeholder: "Email", text: $viewModel.email)
+                    .textContentType(.emailAddress)
                     .padding()
                 
-                PasswordField(placeholder: "Password", text: $password)
+                PasswordField(placeholder: "Password", text: $viewModel.password)
                     .padding()
             }
             
             Spacer()
             
-            PrimaryButton(text: "Log in") {
-                print("Email: \(email)")
-                print("Password: \(password)")
+            PrimaryButton(text: loginButtonText(), action: handleLogin)
+                .disabled(isLogginIn)
+                .padding()
+                .alert(item: $viewModel.error) { error in
+                    Alert(
+                        title: Text(error.title),
+                        message: Text(error.details ?? ""),
+                        dismissButton: .default(Text("Ok"))
+                    )
+                }
+        }
+        .padding(.top, 16)
+        .padding(.bottom, 16)
+    }
+}
+
+extension LoginView {
+    func loginButtonText() -> String {
+        return !isLogginIn ? "Log in" : "Loading..."
+    }
+    
+    func handleLogin() {
+        isLogginIn = true
+        viewModel.login() {
+            isLogginIn = false
+            
+            if viewModel.error == nil {
+                didLogIn = true
+                dismiss()
             }
-            .padding()
         }
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
+    static let data = LoginViewModel(DIContainer())
+    
     static var previews: some View {
-        LoginView()
+        LoginView(viewModel: data, didLogIn: .constant(false))
     }
 }

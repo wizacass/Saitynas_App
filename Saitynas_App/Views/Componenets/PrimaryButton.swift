@@ -14,6 +14,7 @@ struct PrimaryButton: View {
                 .foregroundColor(Color.white)
                 .font(.title2)
                 .cornerRadius(16)
+                .shadow(color: Color.accentColor, radius: 8, x: 0, y: 0)
         }
     }
 }

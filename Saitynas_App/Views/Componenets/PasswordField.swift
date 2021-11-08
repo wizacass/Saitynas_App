@@ -8,7 +8,8 @@ struct PasswordField: View {
     var body: some View {
         SecureField(placeholder, text: $text)
             .padding()
-            .background(Color("AccentColorLight"))
+            .background(.regularMaterial)
+            .background(Color.accentColor)
             .cornerRadius(8)
     }
 }

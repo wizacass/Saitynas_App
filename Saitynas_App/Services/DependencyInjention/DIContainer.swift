@@ -1,7 +1,7 @@
 import Foundation
 
-class DIContainer {
+class DIContainer: ContainerProtocol, ObservableObject {
     
-    var communicator: Communicator?
-    
+    @Published var communicator: Communicator?
+    @Published var authenticationManager: AuthenticationManager?
 }
