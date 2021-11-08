@@ -7,8 +7,13 @@
 "ok" = "OK";
 "email" = "Email";
 "password" = "Password";
+"error" = "Error!";
 
 // MARK: - Login View
 "login_view_title" = "Welcome back!";
-"email_placeholder" = "wmail@example.com";
+"email_placeholder" = "email@example.com";
 "password_placeholder" = "password";
+
+// MARK: - Errors
+"parameter_empty" = "Input field(s) cannot be left blank!";
+"authentication_error" = "Invalid username or password!";

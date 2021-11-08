@@ -35,7 +35,7 @@ struct LoginView: View {
                         label: "password".localized,
                         imageName: ImageNameConstants.passwordicon,
                         contentType: .password,
-                        isSecure: false,
+                        isSecure: true,
                         text: $viewModel.password
                     ).padding()
                 }
@@ -45,13 +45,7 @@ struct LoginView: View {
                     .buttonStyle(PrimaryButtonStyle())
                     .disabled(isLogginIn)
                     .padding()
-                    .alert(item: $viewModel.error) { error in
-                        Alert(
-                            title: Text(error.title),
-                            message: Text(error.details ?? "generic_error"),
-                            dismissButton: .default(Text("ok".localized))
-                        )
-                    }
+                    .alert(item: $viewModel.error, content: createAlert)
             }
             .background(
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
@@ -81,6 +75,14 @@ extension LoginView {
                 dismiss()
             }
         }
+    }
+    
+    func createAlert(_ error: Error) -> Alert {
+        return Alert(
+            title: Text("error".localized),
+            message: Text(error.title.localized),
+            dismissButton: .default(Text("ok".localized))
+        )
     }
 }
 
