@@ -24,7 +24,7 @@ struct LoginView: View {
                     InputField(
                         placeholder: "email_placeholder".localized,
                         label: "email".localized,
-                        imageName: "at",
+                        imageName: ImageNameConstants.emailIcon,
                         contentType: .emailAddress,
                         isSecure: false,
                         text: $viewModel.email
@@ -33,7 +33,7 @@ struct LoginView: View {
                     InputField(
                         placeholder: "password_placeholder".localized,
                         label: "password".localized,
-                        imageName: "lock.fill",
+                        imageName: ImageNameConstants.passwordicon,
                         contentType: .password,
                         isSecure: false,
                         text: $viewModel.password
