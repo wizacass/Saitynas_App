@@ -33,6 +33,7 @@ struct AuthenticationView: View {
                         isLoginShown = true
                     }
                     .buttonStyle(PrimaryButtonStyle())
+                    .padding(.bottom, 8)
                     .sheet(isPresented: $isLoginShown) {
                         LoginView(
                             viewModel: LoginViewModel(viewModel.container),

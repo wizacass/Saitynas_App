@@ -15,34 +15,54 @@ struct LoginView: View {
                 .font(.largeTitle)
                 .fontWeight(.semibold)
                 .padding()
+                .padding(.top, 16)
             
             Spacer()
             
             VStack {
-                InputField(placeholder: "Email", text: $viewModel.email)
-                    .textContentType(.emailAddress)
-                    .padding()
-                
-                PasswordField(placeholder: "Password", text: $viewModel.password)
-                    .padding()
-            }
-            
-            Spacer()
-            
-            Button(loginButtonText(), action: handleLogin)
-                .buttonStyle(PrimaryButtonStyle())
-                .disabled(isLogginIn)
-                .padding()
-                .alert(item: $viewModel.error) { error in
-                    Alert(
-                        title: Text(error.title),
-                        message: Text(error.details ?? ""),
-                        dismissButton: .default(Text("Ok"))
-                    )
+                VStack {
+                    InputField(
+                        placeholder: "email@example.com",
+                        label: "Email",
+                        imageName: "at",
+                        contentType: .emailAddress,
+                        isSecure: false,
+                        text: $viewModel.email
+                    ).padding()
+                    
+                    InputField(
+                        placeholder: "password",
+                        label: "Password",
+                        imageName: "lock.fill",
+                        contentType: .password,
+                        isSecure: false,
+                        text: $viewModel.password
+                    ).padding()
                 }
+                .shadow(color: Color.offWhite, radius: 8, x: 0, y: 0)
+                
+                Button(loginButtonText(), action: handleLogin)
+                    .buttonStyle(PrimaryButtonStyle())
+                    .disabled(isLogginIn)
+                    .padding()
+                    .alert(item: $viewModel.error) { error in
+                        Alert(
+                            title: Text(error.title),
+                            message: Text(error.details ?? "password"),
+                            dismissButton: .default(Text("Ok"))
+                        )
+                    }
+            }
+            .background(
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .fill(.white)
+                    .shadow(color: Color.offWhite, radius: 8, x: 0, y: 0)
+            )
+            
+            .padding()
         }
         .padding(.top, 16)
-        .padding(.bottom, 16)
+        .padding(.bottom, 48)
     }
 }
 
@@ -69,5 +89,6 @@ struct LoginView_Previews: PreviewProvider {
     
     static var previews: some View {
         LoginView(viewModel: data, didLogIn: .constant(false))
+        
     }
 }
