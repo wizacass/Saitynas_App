@@ -14,10 +14,8 @@
 		86328E2226E68B6000A904DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86328E2126E68B6000A904DD /* Preview Assets.xcassets */; };
 		86328E2D26E68B6000A904DD /* Saitynas_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86328E2C26E68B6000A904DD /* Saitynas_AppTests.swift */; };
 		86328E3826E68B6000A904DD /* Saitynas_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86328E3726E68B6000A904DD /* Saitynas_AppUITests.swift */; };
-		8684BE9227411E1C0064AF28 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8684BE9127411E1B0064AF28 /* SettingsView.swift */; };
 		8684BE9427411E670064AF28 /* WorkplacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8684BE9327411E670064AF28 /* WorkplacesView.swift */; };
 		8684BE9627411E980064AF28 /* SpecialistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8684BE9527411E980064AF28 /* SpecialistDetailView.swift */; };
-		8684BE9827412E4B0064AF28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8684BE9727412E4B0064AF28 /* ContentView.swift */; };
 		8684BE9A274131A10064AF28 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8684BE99274131A10064AF28 /* ViewRouter.swift */; };
 		8684BE9D27413EEA0064AF28 /* TabBarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8684BE9C27413EEA0064AF28 /* TabBarIcon.swift */; };
 		8684BE9F274141090064AF28 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8684BE9E274141090064AF28 /* TabBar.swift */; };
@@ -95,10 +93,8 @@
 		86328E3326E68B6000A904DD /* Saitynas_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Saitynas_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86328E3726E68B6000A904DD /* Saitynas_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Saitynas_AppUITests.swift; sourceTree = "<group>"; };
 		86328E3926E68B6000A904DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8684BE9127411E1B0064AF28 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8684BE9327411E670064AF28 /* WorkplacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkplacesView.swift; sourceTree = "<group>"; };
 		8684BE9527411E980064AF28 /* SpecialistDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialistDetailView.swift; sourceTree = "<group>"; };
-		8684BE9727412E4B0064AF28 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8684BE99274131A10064AF28 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		8684BE9C27413EEA0064AF28 /* TabBarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIcon.swift; sourceTree = "<group>"; };
 		8684BE9E274141090064AF28 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
@@ -295,9 +291,7 @@
 				86328E1C26E68B5F00A904DD /* AuthenticationView.swift */,
 				86DF000B27352A3600B1D5F6 /* UserView.swift */,
 				86ABEF082739A8EE00D5B601 /* HomeView.swift */,
-				8684BE9127411E1B0064AF28 /* SettingsView.swift */,
 				8684BE9327411E670064AF28 /* WorkplacesView.swift */,
-				8684BE9727412E4B0064AF28 /* ContentView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -680,7 +674,6 @@
 				86DF00012734A31000B1D5F6 /* AccessCommunicator.swift in Sources */,
 				8684BE9A274131A10064AF28 /* ViewRouter.swift in Sources */,
 				86ABEF042739A3DA00D5B601 /* ImageNameConstants.swift in Sources */,
-				8684BE9227411E1C0064AF28 /* SettingsView.swift in Sources */,
 				86328E1D26E68B5F00A904DD /* AuthenticationView.swift in Sources */,
 				86DF0015273973C200B1D5F6 /* SecondaryButtonStyle.swift in Sources */,
 				86DF000A2735201000B1D5F6 /* UserTokensRepository.swift in Sources */,
@@ -703,7 +696,6 @@
 				86C3F1182731F4470010802B /* DIContainer.swift in Sources */,
 				86DF00132739731800B1D5F6 /* UIConstants.swift in Sources */,
 				8684BE9427411E670064AF28 /* WorkplacesView.swift in Sources */,
-				8684BE9827412E4B0064AF28 /* ContentView.swift in Sources */,
 				86ABEF092739A8EE00D5B601 /* HomeView.swift in Sources */,
 				86ABEF0B2739A94700D5B601 /* SpecialistsListView.swift in Sources */,
 				86ABEF102739AC2000D5B601 /* SpecialistRowView.swift in Sources */,

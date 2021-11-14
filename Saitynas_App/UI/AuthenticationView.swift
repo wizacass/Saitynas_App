@@ -1,6 +1,10 @@
 import SwiftUI
 
 struct AuthenticationView: View {
+    
+    @EnvironmentObject var c: DIContainer
+    @StateObject var viewRouter: ViewRouter
+    
     @ObservedObject var viewModel: MessageViewModel
     
     @State var isLoginShown: Bool = false
@@ -16,7 +20,6 @@ struct AuthenticationView: View {
                     .padding()
                 
                 Text(viewModel.message ?? "loading".localized)
-                    .onAppear(perform: viewModel.loadMessage)
                     .padding()
                     .alert(item: $viewModel.error) { error in
                         Alert(
@@ -36,7 +39,7 @@ struct AuthenticationView: View {
                     .padding(.bottom, 8)
                     .sheet(isPresented: $isLoginShown) {
                         LoginView(
-                            viewModel: LoginViewModel(viewModel.container),
+                            viewModel: LoginViewModel(c),
                             didLogIn: $didLogIn
                         )
                     }
@@ -51,11 +54,16 @@ struct AuthenticationView: View {
                 }.padding()
                 
                 NavigationLink(
-                    destination: HomeView().environmentObject(viewModel.container),
+                    destination: HomeView(viewRouter: viewRouter).environmentObject(c),
                     isActive: $didLogIn
                 ) { EmptyView() }
             }
-        }.navigationBarHidden(true)
+        }
+        .navigationBarHidden(true)
+        .onAppear() {
+            viewModel.container = c
+            viewModel.loadMessage()
+        }
     }
     
     func alertMessage(_ message: String?) -> Text? {
@@ -68,6 +76,6 @@ struct AuthenticationView_Previews: PreviewProvider {
     static let data = MessageViewModel(DIContainer())
     
     static var previews: some View {
-        AuthenticationView(viewModel: data)
+        AuthenticationView(viewRouter: ViewRouter(), viewModel: data)
     }
 }

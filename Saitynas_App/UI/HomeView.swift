@@ -2,34 +2,34 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var c: DIContainer
+    @StateObject var viewRouter: ViewRouter
     
     var body: some View {
-        TabView {
-            SpecialistsListView(viewModel: SpecialistListViewModel(c.communicator))
-                .environmentObject(c)
-                .tabItem {
-                    Label("Specialists", systemImage: "list.dash")
-                }
-                .tag(Tab.specialists)
-            
-            WorkplacesView()
-                .tabItem {
-                    Label("Workplaces", systemImage: "cross")
-                }
-                .tag(Tab.workplaces)
-            
-            SettingsView()
-                .environmentObject(c)
-                .tabItem {
-                    Label("Profile", systemImage: "person")
-                }
-                .tag(Tab.profile)
-        }.navigationBarHidden(true)
+        NavigationView {
+            GeometryReader { geometry in
+                VStack {
+                    Spacer()
+                    
+                    switch viewRouter.selectedTab {
+                    case .specialists:
+                        SpecialistsListView(viewModel: SpecialistListViewModel(c.communicator)).environmentObject(c)
+                    case .workplaces:
+                        WorkplacesView()
+                    case .profile:
+                        UserView(viewRouter: viewRouter).environmentObject(c)
+                    }
+                    
+                    Spacer()
+                    
+                    TabBar(viewRouter: viewRouter, geometry: geometry)
+                }                }
+            .edgesIgnoringSafeArea(.bottom)
+        }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView().environmentObject(DIContainer())
+        HomeView(viewRouter: ViewRouter()).environmentObject(DIContainer())
     }
 }

@@ -8,12 +8,11 @@ struct SaitynasApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            if c.authenticationManager?.isLoggedIn ?? false {
-//                HomeView().environmentObject(c)
-//            } else {
-//                AuthenticationView(viewModel: MessageViewModel(c))
-//            }
-            ContentView(viewRouter: viewRouter).environmentObject(c)
+            if c.authenticationManager?.isLoggedIn ?? false {
+                HomeView(viewRouter: viewRouter).environmentObject(c)
+            } else {
+                AuthenticationView(viewRouter: viewRouter, viewModel: MessageViewModel()).environmentObject(c)
+            }
         }
     }
 }

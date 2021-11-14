@@ -16,7 +16,7 @@ struct SpecialistsListView: View {
             }
             .onAppear(perform: viewModel.loadSpecialists)
             .navigationTitle("Specialists")
-        }
+        }.navigationBarHidden(true)
     }
 }
 
