@@ -12,20 +12,19 @@ struct HomeView: View {
                 }
                 .tag(Tab.specialists)
             
-            UserView()
-                .environmentObject(c)
+            WorkplacesView()
                 .tabItem {
                     Label("Workplaces", systemImage: "cross")
                 }
                 .tag(Tab.workplaces)
             
-            UserView()
+            SettingsView()
                 .environmentObject(c)
                 .tabItem {
                     Label("Profile", systemImage: "person")
                 }
                 .tag(Tab.profile)
-        }
+        }.navigationBarHidden(true)
     }
 }
 

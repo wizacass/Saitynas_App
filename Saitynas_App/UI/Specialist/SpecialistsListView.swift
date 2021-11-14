@@ -9,7 +9,7 @@ struct SpecialistsListView: View {
         NavigationView {
             List {
                 ForEach(viewModel.specialists) { specialist in
-                    NavigationLink(destination: UserView()) {
+                    NavigationLink(destination: SpecialistDetailView()) {
                         SpecialistRowView(viewModel: SpecialistRowViewModel(specialist))
                     }
                 }

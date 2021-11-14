@@ -51,7 +51,7 @@ struct AuthenticationView: View {
                 }.padding()
                 
                 NavigationLink(
-                    destination: UserView().environmentObject(viewModel.container),
+                    destination: HomeView().environmentObject(viewModel.container),
                     isActive: $didLogIn
                 ) { EmptyView() }
             }
