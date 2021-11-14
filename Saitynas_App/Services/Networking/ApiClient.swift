@@ -7,13 +7,11 @@ class ApiClient
     private let decoder = JSONDecoder()
     
     private var apiUrl: String
+    private var tokensRepo: UserTokensRepository
     
-    private var baseUrl: String {
-        return "https://\(apiUrl)/api/v1"
-    }
-    
-    init(_ apiUrl: String) {
+    init(_ apiUrl: String, _ tokensRepo: UserTokensRepository) {
         self.apiUrl = apiUrl
+        self.tokensRepo = tokensRepo
     }
     
     func get<T: Decodable>(
@@ -21,12 +19,13 @@ class ApiClient
         _ onSuccess: @escaping (T?) -> Void,
         _ onError: @escaping (Error?) -> Void
     ) {
-        let url = "\(baseUrl)\(endpoint)"
+        let url = createUrl(endpoint)
         let headers = createHeaders()
         
         AF.request(url, method: .get, headers: headers)
             .validate()
             .responseJSON(queue: queue) { [weak self] response in
+                print(response.debugDescription)
                 self?.handleResponse(response, onSuccess, onError)
             }
     }
@@ -37,7 +36,7 @@ class ApiClient
         _ onSuccess: @escaping (T?) -> Void,
         _ onError: @escaping (Error?) -> Void
     ) {
-        let url = "\(baseUrl)\(endpoint)"
+        let url = createUrl(endpoint)
         let headers = createHeaders()
         
         AF.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers)
@@ -47,11 +46,25 @@ class ApiClient
             }
     }
     
+    private func createUrl(_ endpoint: String) -> URL {
+        var components = URLComponents()
+        
+        components.scheme = "https"
+        components.host = apiUrl
+        components.path = "/api/v1\(endpoint)"
+        
+        return components.url!
+    }
+    
     private func createHeaders() -> HTTPHeaders {
-        let headers: HTTPHeaders = [
+        var headers: HTTPHeaders = [
             "Accept": "application/json",
             "X-Api-Request": "true"
         ]
+        
+        if let token = tokensRepo.accessToken {
+            headers.add(name: "Authorization", value: "Bearer \(token)")
+        }
         
         return headers
     }

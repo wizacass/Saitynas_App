@@ -1,30 +1,36 @@
 import SwiftUI
 
-struct PatientView: View {
+struct HomeView: View {
     @EnvironmentObject var c: DIContainer
     
     var body: some View {
         TabView {
-            SpecialistsListView()
+            SpecialistsListView(viewModel: SpecialistListViewModel(c.communicator))
+                .environmentObject(c)
                 .tabItem {
                     Label("Specialists", systemImage: "list.dash")
                 }
+                .tag(Tab.specialists)
             
-            SpecialistsListView()
+            UserView()
+                .environmentObject(c)
                 .tabItem {
                     Label("Workplaces", systemImage: "cross")
                 }
+                .tag(Tab.workplaces)
             
-            UserView().environmentObject(c)
+            UserView()
+                .environmentObject(c)
                 .tabItem {
                     Label("Profile", systemImage: "person")
                 }
+                .tag(Tab.profile)
         }
     }
 }
 
-struct PatientView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        PatientView().environmentObject(DIContainer())
+        HomeView().environmentObject(DIContainer())
     }
 }

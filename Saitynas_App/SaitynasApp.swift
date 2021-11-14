@@ -8,7 +8,7 @@ struct SaitynasApp: App {
     var body: some Scene {
         WindowGroup {
             if c.authenticationManager?.isLoggedIn ?? false {
-                PatientView().environmentObject(c)
+                HomeView().environmentObject(c)
             } else {
                 AuthenticationView(viewModel: MessageViewModel(c))
             }

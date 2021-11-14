@@ -11,4 +11,8 @@ class Communicator {
     func getMessage(onSuccess: @escaping (Message?) -> Void, onError: @escaping (Error?) -> Void) {
         apiClient.get("", onSuccess, onError)
     }
+    
+    func getSpecialists(onSuccess: @escaping (Specialists?) -> Void, onError: @escaping (Error?) -> Void) {
+        apiClient.get("/specialists", onSuccess, onError)
+    }
 }

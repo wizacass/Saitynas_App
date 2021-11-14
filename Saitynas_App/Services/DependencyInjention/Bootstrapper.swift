@@ -11,12 +11,12 @@ class Bootstrapper {
     init() {
         let apiUrl = Bundle.main.object(forInfoDictionaryKey: "apiUrl") as! String
         
-        apiClient = ApiClient(apiUrl)
-        communicator = Communicator(apiClient)
-        accessCommunicator = AccessCommunicator(apiClient)
-        
         let storage = KeychainStorage()
         tokensRespository = UserTokensRepository(storage)
+        
+        apiClient = ApiClient(apiUrl, tokensRespository)
+        communicator = Communicator(apiClient)
+        accessCommunicator = AccessCommunicator(apiClient)
         
         authenticationManager = AuthenticationManager(accessCommunicator, tokensRespository)
     }
