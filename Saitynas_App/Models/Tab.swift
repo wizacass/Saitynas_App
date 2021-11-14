@@ -1,7 +1,7 @@
 import Foundation
 
-enum Tab {
-    case specialists
-    case workplaces
-    case profile
+enum Tab: String {
+    case specialists = "specialists"
+    case workplaces = "workplaces"
+    case profile = "profile"
 }

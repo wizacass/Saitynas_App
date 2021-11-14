@@ -25,7 +25,7 @@ struct UserView: View {
                 ) { EmptyView() }
                 
             }.padding()
-        }.navigationBarHidden(true)
+        }
     }
 }
 

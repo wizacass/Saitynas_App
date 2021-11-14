@@ -9,6 +9,11 @@
 "password" = "Password";
 "error" = "Error!";
 
+// MARK: - Tab Bar
+"specialists" = "Specialists";
+"workplaces" = "Workplaces";
+"profile" = "Profile";
+
 // MARK: - Login View
 "login_view_title" = "Welcome back!";
 "email_placeholder" = "email@example.com";
